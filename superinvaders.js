@@ -16,7 +16,7 @@ function setup() {
 	background(40);
 	console.log(PlayerSetup);
 	Player=circle(PlayerSetup.X,PlayerSetup.Y,PlayerSetup.Size);
-	Player.X=PlayerSetup.XM
+	Player.x=PlayerSetup.XM
 }
 
 function draw() {
