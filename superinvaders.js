@@ -5,20 +5,18 @@ let CanvasSetup = {
 
 let PlayerSetup = {
 //FIXME: Player Not showing
-X : ((CanvasSetup.X/2) - (CanvasSetup*0.05)),
+X : ((CanvasSetup.X/2) - (CanvasSetup.X*0.05)),
 Y : (CanvasSetup.Y*0.95),
-Size : (CanvasSetup*0.1),
+Size : (CanvasSetup.X*0.1),
 Color : [255,255,0]
 };
-
-let Player;
 
 function setup() {
 	createCanvas(CanvasSetup.X,CanvasSetup.Y);
 	background(40);
-	console.log(PlayerSetup)
+	console.log(PlayerSetup);
 	Player=circle(PlayerSetup.X,PlayerSetup.Y,PlayerSetup.Size);
-	Player.x=PlayerSetup.X;
+	Player.X=PlayerSetup.XM
 }
 
 function draw() {
@@ -26,12 +24,13 @@ function draw() {
 }
 
 function keyTyped(){
-	if (key === 'a') {
-		Player.move(-5,0,0);
-	} else if (key === 'd'){
-		Player.move(5,0,0);
-	} else {
-		console.log("Key not bound: {key}");
-	}
 	draw()
+	if (key === 'a') {
+		Player.x(-5);
+	} else if (key === 'd'){
+		Player.x(5);
+	} else {
+		console.log("Key not bound:",key);
+	}
+	
 }
