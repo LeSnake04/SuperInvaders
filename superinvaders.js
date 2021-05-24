@@ -1,14 +1,36 @@
+let CanvasSetup = {
+	X : 400,
+	Y : 600
+};
+
+let PlayerSetup = {
+X : (CanvasSetup.X/2-CanvasSetup*0.05),
+Y : (CanvasSetup.Y*0.95),
+Size : (CanvasSetup*0.1),
+Color : [255,255,0]
+};
+
+let Player;
+
 function setup() {
-	createCanvas(400,600);
+	createCanvas(CanvasSetup.X,CanvasSetup.Y);
+	background(40);
+	Player=circle(PlayerSetup.X,PlayerSetup.Y,PlayerSetup.Size);
+	Player.x=PlayerSetup.X;
+	draw()
 }
 
 function draw() {
-  background(40);
-	player=ellipse(180,570,40,40);
-	player.fill(255,255,0);
-	if (keyIsPressed === true) {
-		if (key == "a") {
-			player.move(5,0,0);
-		}
+	Player.fill(PlayerSetup.Color);
+}
+
+function keyTyped(){
+	if (key === 'a') {
+		Player.move(-5,0,0);
+	} else if (key === 'd'){
+		Player.move(5,0,0);
+	} else {
+		console.log("Key not bound: {key}");
 	}
+	draw()
 }
