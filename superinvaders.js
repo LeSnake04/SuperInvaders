@@ -30,5 +30,4 @@ function keyTyped(){
 	} else {
 		console.log("Key not bound:",key);
 	}
-	
 }
