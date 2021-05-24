@@ -4,7 +4,8 @@ let CanvasSetup = {
 };
 
 let PlayerSetup = {
-X : (CanvasSetup.X/2-CanvasSetup*0.05),
+//FIXME: Player Not showing
+X : ((CanvasSetup.X/2) - (CanvasSetup*0.05)),
 Y : (CanvasSetup.Y*0.95),
 Size : (CanvasSetup*0.1),
 Color : [255,255,0]
@@ -15,9 +16,9 @@ let Player;
 function setup() {
 	createCanvas(CanvasSetup.X,CanvasSetup.Y);
 	background(40);
+	console.log(PlayerSetup)
 	Player=circle(PlayerSetup.X,PlayerSetup.Y,PlayerSetup.Size);
 	Player.x=PlayerSetup.X;
-	draw()
 }
 
 function draw() {
