@@ -21,6 +21,17 @@ function draw() {
 
 }
 
+// https://openprocessing.org/sketch/717760/embed/
+class Player {
+	constructor(x,y,d,c,keys) {
+		this.x=x, this.y = y, this.d = d, this.v = v;
+    this.ink = color(c), this.keys = keys;
+  }
+	
+	fill(PlayerSetup.Color).circle();
+}
+
+/*
 function keyTyped(){
 	draw()
 	if (key === 'a') {
@@ -31,3 +42,4 @@ function keyTyped(){
 		console.log("Key not bound:",key);
 	}
 }
+*/
